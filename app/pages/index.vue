@@ -9,14 +9,16 @@
       >
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full overflow-hidden">
-  <img
-    src="assets/img/logo.png"
-    alt="Logo"
-    class="w-full h-full object-cover"
-  />
-</div>
+            <img
+              src="assets/img/logo.png"
+              alt="Logo"
+              class="w-full h-full object-cover"
+            />
+          </div>
 
-          <div class="text-lg font-bold text-purple">Artificial Intelligence: Price of Free</div>
+          <div class="text-lg font-bold text-purple">
+            Artificial Intelligence: Price of Free
+          </div>
         </div>
 
         <!-- Desktop links -->
@@ -28,10 +30,13 @@
           <a href="#ai-data" class="hover:text-purple-600 transition"
             >AI & Data</a
           >
-          <a href="#privacy" class="hover:text-purple-600 transition">Privacy</a>
+          <a href="#fairness" @click="closeMobile" class="py-2"
+            >Fairness & Bias</a
+          >
+          <a href="#privacy" class="hover:text-purple-600 transition"
+            >Privacy</a
+          >
           <a href="#game" class="hover:text-purple-600 transition">Game</a>
-          <a href="#pledge" class="hover:text-purple-600 transition">Pledge</a>
-          <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
         </nav>
         <button
           @click="mobileOpen = !mobileOpen"
@@ -80,329 +85,405 @@
           <a href="#home" @click="closeMobile" class="py-2">Home</a>
           <a href="#what-is-ai" @click="closeMobile" class="py-2">What is AI</a>
           <a href="#ai-data" @click="closeMobile" class="py-2">AI & Data</a>
+          <a href="#fairness" @click="closeMobile" class="py-2"
+            >Fairness & Bias</a
+          >
           <a href="#privacy" @click="closeMobile" class="py-2">Privacy</a>
           <a href="#game" @click="closeMobile" class="py-2">Game</a>
-          <a href="#pledge" @click="closeMobile" class="py-2">Pledge</a>
-          <a href="#contact" @click="closeMobile" class="py-2">Contact</a>
         </div>
       </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6">
-     <!-- HERO SECTION-->
-<section id="home" class="">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <!-- HERO SECTION-->
+      <section id="home" class="">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <!-- LEFT TEXT -->
+          <div>
+            <h1
+              class="text-5xl font-extrabold text-purple font-merri text-4xl font-bold"
+            >
+              The Price of Free:
+            </h1>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 text-black">
+              How Much Is Your Data Worth?
+            </h2>
 
-    <!-- LEFT TEXT -->
-    <div>
-      <h1 class="text-5xl font-extrabold text-purple
-      font-merri text-4xl font-bold">
-        The Price of Free:
-      </h1>
-      <h2 class="text-3xl md:text-4xl font-bold mt-2 text-black">
-        How Much Is Your Data Worth?
-      </h2>
+            <p class="mt-5 text-gray-700 text-lg italic">
+              In the age of Artificial Intelligence, your data is your identity.
+            </p>
 
-      <p class="mt-5 text-gray-700 text-lg italic">
-        In the age of Artificial Intelligence, your data is your identity.
-      </p>
+            <p class="mt-6 text-gray-700 max-w-xl">
+              Every online action teaches AI something about you. This website
+              uncovers how data powers AI systems and how your digital choices
+              shape the algorithms around you.
+            </p>
 
-      <p class="mt-6 text-gray-700 max-w-xl">
-        Every online action teaches AI something about you. This website
-        uncovers how data powers AI systems and how your digital choices shape
-        the algorithms around you.
-      </p>
+            <p class="mt-6 text-gray-700 max-w-xl">
+              Learn what data AI uses, why it matters, and how small choices
+              shape the systems around us. Play the interactive "Would You Trade
+              It?" experience and reflect on your digital footprint.
+            </p>
 
-      <p class="mt-6 text-gray-700 max-w-xl">
-        Learn what data AI uses, why it matters, and how small choices shape the
-        systems around us. Play the interactive "Would You Trade It?"
-        experience and reflect on your digital footprint.
-      </p>
-
-      <div class="mt-8 flex gap-4 flex-wrap">
-        <a
-          href="#game"
-          class="bg-purple text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700"
-        >
-          Play Interactive Game
-        </a>
-        <a
-          href="#pledge"
-          class="border border-purple text-purple px-6 py-3 rounded-full hover:bg-purple-light hover:text-white font-semibold"
-        >
-          Make a Pledge
-        </a>
-      </div>
-    </div>
-
-    <!-- RIGHT IMAGE (similar style to reference layout) -->
-    <div class="relative flex justify-center items-center">
-      <!-- soft glow using your theme colors -->
-      <div class="absolute inset-0 bg-gradient-to-r from-purple-300/40 via-pink-300/40 to-cyan-300/40 blur-3xl"></div>
-
-      <img
-        src="assets/img/ai.png"
-        alt="AI visual"
-        class="relative w-full max-w-lg drop-shadow-xl rounded-xl"
-      />
-    </div>
-
-  </div>
-</section>
-
-<!-- What is AI --> 
-<section id="what-is-ai" class="py-10 max-w-7xl mx-auto px-4">
-  <!-- Heading -->
-  <div class="text-center mb-10">
-    <h3 class="text-3xl font-bold text-purple">What is Artificial Intelligence?</h3>
-    <p class="mt-4 text-gray-700 max-w-3xl mx-auto">
-      Artificial Intelligence (AI) are systems that perform tasks that
-          normally require human intelligence such as recognising images,
-          translating language, or recommending content. Many AI systems are
-          trained using data created by people: photos, clicks, text and
-          location.
-    </p>
-  </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition">
-      <h4 class="text-xl font-bold text-purple">Machine Learning</h4>
-      <p class="mt-3 text-gray-600">
-        Models learn patterns from many examples (data).
-      </p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition">
-      <h4 class="text-xl font-bold text-purple">Computer Vision</h4>
-      <p class="mt-3 text-gray-600">
-        AI that understands images and video.
-      </p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition">
-      <h4 class="text-xl font-bold text-purple">Natural Language Processing</h4>
-      <p class="mt-3 text-gray-600">
-        AI systems that understand or generate text and speech.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- Images Grid -->
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="margin-top: 40px;">
-    <!-- Left large image --> 
-      <div class="rounded-2xl overflow-hidden">
-        <img src="assets/img/ai1.jpg" alt="AI at work" class=" w-full h-full object-cover">
-      </div>
-
-    <!-- Center large image -->
-    <div class="grid grid-rows-2 gap-6">
-    <div class="rounded-2xl overflow-hidden">
-      <img src="assets/img/a3.jpg" alt="Person working on laptop" class=" object-cover">
-    </div>
-    <div class="rounded-2xl overflow-hidden">
-        <img src="assets/img/a5.jpg" alt="Robot AI" class="object-cover">
-      </div>
-    </div>
-
-    <!-- Right two stacked images -->
-      <div class="rounded-2xl overflow-hidden">
-        <img src="assets/img/a4.jpg" alt="AI at work" class="w-full h-full object-cover">
-      </div>
-  </div>
-</section>      
-
-<!-- FEATURE CARDS SECTION (New) -->
-<section class="py-16">
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition">
-      <h4 class="text-xl font-bold text-purple">Machine Learning</h4>
-      <p class="mt-3 text-gray-600">
-        Models learn patterns from many examples (data).
-      </p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition">
-      <h4 class="text-xl font-bold text-purple">Computer Vision</h4>
-      <p class="mt-3 text-gray-600">
-        AI that understands images and video.
-      </p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition">
-      <h4 class="text-xl font-bold text-purple">Natural Language Processing</h4>
-      <p class="mt-3 text-gray-600">
-        AI systems that understand or generate text and speech.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- AI PRIVACY SECTION (Inspired by Reference Layout) -->
-<section id="privacy" class="py-20">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-    <!-- LEFT TEXT -->
-    <div>
-      <h3 class="text-4xl font-bold text-purple mb-4">
-        AI Privacy
-      </h3>
-
-      <p class="text-gray-700 text-lg leading-relaxed max-w-xl">
-        AI protects human privacy by anonymizing sensitive data, encrypting
-        communications, and using techniques such as differential privacy
-        to prevent personal identification.
-      </p>
-
-      <p class="mt-5 text-gray-700 max-w-xl">
-        As AI systems become more integrated into daily life, ensuring the
-        safety and security of personal information becomes even more crucial.
-        Understanding how your data is handled can help you make safer digital
-        choices.
-      </p>
-    </div>
-
-    <!-- RIGHT IMAGE + GLOW EFFECT -->
-    <div class="relative flex justify-center">
-      <!-- Soft glow in your theme colors -->
-      <div class="absolute inset-0 bg-gradient-to-r from-purple-300/40 via-pink-300/40 to-cyan-300/40 blur-3xl rounded-full"></div>
-
-      <!-- IMAGE (replace with your image if needed) -->
-      <img
-        src="assets/img/ai-privacy.jpg"
-        alt="AI Privacy Visual"
-        class="relative w-full max-w-lg rounded-xl shadow-xl"
-      />
-    </div>
-
-  </div>
-</section>
-
-
-      <section class="py-10" id="color-palette">
-        <!-- 
-        generate based this
-        --color-cream: #fffaeb;
-  
-        -->
-        <h3 class="text-2xl font-bold text-teal-700">Color Palette</h3>
-        <div class="mt-4 flex gap-4">
-          <div
-            class="w-16 h-16 bg-cyan rounded-lg shadow flex items-center justify-center text-gray-700 font-semibold"
-          >
-            CYAN
+            <div class="mt-8 flex gap-4 flex-wrap">
+              <a
+                href="#game"
+                class="bg-purple text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700"
+              >
+                Play Interactive Game
+              </a>
+              <a
+                href="#pledge"
+                class="border border-purple text-purple px-6 py-3 rounded-full hover:bg-purple-light hover:text-white font-semibold"
+              >
+                Make a Pledge
+              </a>
+            </div>
           </div>
-          <div
-            class="w-16 h-16 bg-pink rounded-lg shadow flex items-center justify-center text-white font-semibold"
-          >
-            PINK
-          </div>
-          <div
-            class="w-16 h-16 bg-cyan-light rounded-lg shadow flex items-center justify-center text-gray-700 font-semibold"
-          >
-            CYAN-LIGHT
-          </div>
-          <div
-            class="w-16 h-16 bg-pink-light rounded-lg shadow flex items-center justify-center text-white font-semibold"
-          >
-            PINK-LIGHT
-          </div>
-          <div
-            class="w-16 h-16 bg-purple-light rounded-lg shadow flex items-center justify-center text-white font-semibold"
-          >
-            PURPLE-LIGHT
-          </div>
-          <div
-            class="w-16 h-16 bg-purple rounded-lg shadow flex items-center justify-center text-white font-semibold"
-          >
-            PURPLE
-          </div>
-          <div
-            class="w-16 h-16 bg-bg-dark rounded-lg shadow flex items-center justify-center text-white font-semibold"
-          >
-            BG-DARK
-          </div>
-          <div
-            class="w-16 h-16 bg-bg-purple rounded-lg shadow flex items-center justify-center text-white font-semibold"
-          >
-            BG-PURPLE
+
+          <!-- RIGHT IMAGE (similar style to reference layout) -->
+          <div class="relative flex justify-center items-center">
+            <!-- soft glow using your theme colors -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-purple-300/40 via-pink-300/40 to-cyan-300/40 blur-3xl pointer-events-none"
+            ></div>
+
+            <img
+              src="assets/img/ai.png"
+              alt="AI visual"
+              class="relative w-full max-w-lg drop-shadow-xl rounded-xl"
+            />
           </div>
         </div>
       </section>
 
+      <!-- What is AI -->
+      <section id="what-is-ai" class="py-10 max-w-7xl mx-auto px-4">
+        <!-- Heading -->
+        <div class="text-center mb-10">
+          <h3 class="text-3xl font-bold text-purple">
+            What is Artificial Intelligence?
+          </h3>
+          <p class="mt-4 text-gray-700 max-w-3xl mx-auto">
+            Artificial Intelligence (AI) are systems that perform tasks that
+            normally require human intelligence such as recognising images,
+            translating language, or recommending content. Many AI systems are
+            trained using data created by people: photos, clicks, text and
+            location.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition"
+          >
+            <h4 class="text-xl font-bold text-purple">Machine Learning</h4>
+            <p class="mt-3 text-gray-600">
+              Models learn patterns from many examples (data).
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition"
+          >
+            <h4 class="text-xl font-bold text-purple">Computer Vision</h4>
+            <p class="mt-3 text-gray-600">
+              AI that understands images and video.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border border-purple-100 hover:shadow-purple-200 transition"
+          >
+            <h4 class="text-xl font-bold text-purple">
+              Natural Language Processing
+            </h4>
+            <p class="mt-3 text-gray-600">
+              AI systems that understand or generate text and speech.
+            </p>
+          </div>
+        </div>
+
+        <!-- Images Grid -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-3 gap-6"
+          style="margin-top: 40px"
+        >
+          <!-- Left large image -->
+          <div class="rounded-2xl overflow-hidden">
+            <img
+              src="assets/img/ai1.jpg"
+              alt="AI at work"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Center large image -->
+          <div class="grid grid-rows-2 gap-6">
+            <div class="rounded-2xl overflow-hidden">
+              <img
+                src="assets/img/a3.jpg"
+                alt="Person working on laptop"
+                class="object-cover"
+              />
+            </div>
+            <div class="rounded-2xl overflow-hidden">
+              <img
+                src="assets/img/a5.jpg"
+                alt="Robot AI"
+                class="object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Right two stacked images -->
+          <div class="rounded-2xl overflow-hidden">
+            <img
+              src="assets/img/a4.jpg"
+              alt="AI at work"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- AKU TAKNAK FOLLOWWW follow apa aku scroll scroll dia scroll bbalik ikut kau ohhAHAHAH okay scroll dulu-->
       <!-- AI & Data -->
-      <section id="ai-data" class="py-10 bg-white rounded-3xl p-6 shadow">
-        <h3 class="text-2xl font-bold text-purple-700">AI & Your Data</h3>
-        <p class="mt-4 text-gray-700">
-          Everyday actions — likes, search queries, photos — are signals used to
-          train models. Sometimes that data reveals sensitive patterns, and
-          often it is collected without us fully realising the consequences.
+      <section id="ai-data" class="py-10 bg-white rounded-3xl p-8 shadow-lg">
+        <h3 class="text-3xl font-bold text-purple-700">AI & Your Data</h3>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Everyday actions "likes, searches, clicks, and uploaded content"
+          generate data that can be used to train AI models. While this helps AI
+          provide smarter recommendations and personalized experiences, it can
+          also reveal sensitive patterns about you. Often, this data is
+          collected without our full awareness or consent.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div class="p-4 border rounded-lg">
-            <h4 class="font-semibold">What is collected?</h4>
-            <ul class="mt-2 text-gray-600 list-disc list-inside">
-              <li>Device & location data</li>
-              <li>Search & browsing history</li>
-              <li>Photos and uploaded files</li>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div
+            class="p-6 border rounded-xl hover:shadow-md transition-shadow duration-300"
+          >
+            <h4 class="font-semibold text-purple-700 mb-2">
+              What Data is Collected?
+            </h4>
+            <ul class="text-gray-600 list-disc list-inside space-y-1">
+              <li>
+                <strong>Device & Location Data:</strong> IP addresses, GPS,
+                device type
+              </li>
+              <li>
+                <strong>Search & Browsing History:</strong> Queries, visited
+                websites, clicks
+              </li>
+              <li>
+                <strong>Photos & Uploaded Files:</strong> Images, documents,
+                videos shared online
+              </li>
+              <li>
+                <strong>Behavioral Data:</strong> Likes, shares, app usage
+                patterns
+              </li>
             </ul>
           </div>
 
-          <div class="p-4 border rounded-lg">
-            <h4 class="font-semibold">Why it matters</h4>
-            <p class="mt-2 text-gray-600">
-              Collected data shapes model predictions, recommendations, and even
-              decisions that affect people.
+          <div
+            class="p-6 border rounded-xl hover:shadow-md transition-shadow duration-300"
+          >
+            <h4 class="font-semibold text-purple-700 mb-2">Why It Matters</h4>
+            <p class="text-gray-600 leading-relaxed">
+              Data collected from users helps AI models predict preferences,
+              personalize content, and even influence decisions in areas like
+              advertising, hiring, and healthcare. Mismanagement or misuse of
+              this data can lead to privacy risks or biased outcomes.
             </p>
+          </div>
+        </div>
+
+        <div
+          class="mt-8 p-4 bg-purple-50 border-l-4 border-purple-400 rounded-lg"
+        >
+          <h4 class="font-semibold text-purple-700 mb-2">Protect Yourself</h4>
+          <ul class="text-gray-700 list-disc list-inside space-y-1">
+            <li>Review app and website privacy settings regularly</li>
+            <li>Limit the amount of personal data you share online</li>
+            <li>Use privacy-focused browsers or search engines</li>
+            <li>Understand how your data might be used by AI services</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Fairness and Bias Section -->
+      <section id="fairness" class="py-12">
+        <div class="text-center mb-10">
+          <h3 class="text-3xl font-bold text-purple">Fairness & Bias</h3>
+          <p class="mt-4 text-gray-700 max-w-3xl mx-auto">
+            AI bias happens when an AI system gives unfair results because of
+            the data it was trained on. If data is incomplete, stereotypical or
+            unbalanced, the AI will make unfair decisions.
+          </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="relative rounded-3xl overflow-hidden">
+            <!-- gradient background -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-purple-900 via-teal-700 to-indigo-700 pointer-events-none"
+            ></div>
+
+            <div
+              class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8 lg:p-12 text-white"
+            >
+              <!-- Left: Text content like Fairness & Bias style -->
+              <div class="space-y-6">
+                <div class="bg-white/6 p-5 rounded-xl">
+                  <div class="text-2xl font-bold mt-1">Why Bias Happens?</div>
+                  <ul class="list-disc ml-6 text-sm mt-2 space-y-1">
+                    <li>
+                      Biased training data: If AI sees more of one group than
+                      others
+                    </li>
+                    <li>
+                      Human bias: Developers or users unintentionally include
+                      assumptions
+                    </li>
+                    <li>
+                      Algorithm design: AI sometimes misinterprets patterns
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-white/6 p-5 rounded-xl">
+                  <div class="text-2xl font-bold mt-1">
+                    How We Can Reduce Bias?
+                  </div>
+                  <ul class="list-disc ml-6 text-sm mt-2 space-y-1">
+                    <li>Share diverse, balanced content</li>
+                    <li>Review your privacy settings</li>
+                    <li>
+                      Be mindful of what you "like", "save", and "interact" with
+                    </li>
+                    <li>Support ethical, transparent AI apps</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white/6 p-5 rounded-xl">
+                  <div class="text-2xl font-bold mt-1">Real-Life Examples</div>
+                  <ul class="list-disc ml-6 text-sm space-y-1 text-gray-100">
+                    <li>
+                      Face filters: Detect some skin tones better than others
+                    </li>
+                    <li>Hiring AI: Prefer certain gender keywords</li>
+                    <li>Product recommendations: Only target certain groups</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Right: Image like in original -->
+              <div class="flex justify-center lg:justify-end">
+                <div
+                  class="overflow-hidden rounded-2xl w-full max-w-md shadow-2xl"
+                >
+                  <img
+                    src="assets/img/fairness.jpg"
+                    alt="AI operator"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- subtle border -->
+            <div
+              class="absolute inset-0 rounded-3xl pointer-events-none border border-white/6"
+            ></div>
           </div>
         </div>
       </section>
 
-      <!-- Privacy -->
-      <section id="privacy" class="py-10">
-        <h3 class="text-2xl font-bold text-purple-700">Privacy & Safety</h3>
-        <p class="mt-4 text-gray-700 max-w-3xl">
-          Simple actions can improve privacy: review app permissions, use
-          stronger passwords, and think before sharing.
+      <!-- Privacy & Safety -->
+      <section id="privacy" class="py-10 bg-white rounded-3xl p-8 shadow-lg">
+        <h3 class="text-3xl font-bold text-purple-700">
+          Privacy & Digital Footprint
+        </h3>
+        <p class="mt-4 text-gray-700 leading-relaxed max-w-3xl">
+          Every online action-posts, searches, likes, and even location
+          check-ins-leaves a digital footprint. Being mindful of your digital
+          footprint and taking simple privacy measures can help protect your
+          personal information.
         </p>
 
-        <div class="mt-6 flex gap-4 flex-col sm:flex-row">
-          <div class="flex-1 bg-purple-600 text-white p-5 rounded-2xl">
-            <h4 class="font-semibold">Quick tips</h4>
-            <ul class="mt-3 text-sm">
-              <li>Check permissions for photos & location</li>
-              <li>Limit public profile information</li>
-              <li>Use two-factor authentication</li>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="bg-purple-600 text-white p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300"
+          >
+            <h4 class="font-semibold text-lg">Quick Tips for Everyone</h4>
+            <ul class="mt-3 text-sm space-y-1 list-disc list-inside">
+              <li>
+                Check app permissions for photos, location, and microphone
+              </li>
+              <li>Limit public profile information on social media</li>
+              <li>Use strong passwords and enable two-factor authentication</li>
+              <li>Regularly review privacy settings on devices and apps</li>
+              <li>Think before sharing personal content online</li>
             </ul>
           </div>
 
-          <div class="flex-1 bg-white p-5 rounded-2xl shadow">
-            <h4 class="font-semibold text-purple-600">For teachers & parents</h4>
-            <p class="mt-2 text-gray-600">
-              Discuss with young users what data apps ask for and why. Encourage
-              critical questions about free services.
+          <div
+            class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-shadow duration-300"
+          >
+            <h4 class="font-semibold text-purple-600 text-lg">
+              For Teachers & Parents
+            </h4>
+            <p class="mt-2 text-gray-600 leading-relaxed">
+              Talk with young users about the type of data apps and websites
+              collect. Teach them to ask critical questions about free services
+              and the potential consequences of sharing personal information
+              online. Encourage safe browsing habits and awareness of their
+              digital footprint.
             </p>
           </div>
         </div>
+
+        <div
+          class="mt-8 p-6 bg-purple-50 border-l-4 border-purple-400 rounded-lg"
+        >
+          <h4 class="font-semibold text-purple-700 mb-2">
+            Understanding Your Digital Footprint
+          </h4>
+          <p class="text-gray-700 leading-relaxed">
+            Your digital footprint is the trail of data you leave behind online.
+            This includes posts, comments, app usage, purchases, and even search
+            history. Being conscious of your digital footprint helps you protect
+            your privacy, reputation, and security.
+          </p>
+        </div>
+
+        <div
+          class="mt-6 p-6 bg-purple-100 border-l-4 border-purple-400 rounded-lg"
+        >
+          <h4 class="font-semibold text-purple-700 mb-2">
+            Actions to Protect Your Footprint
+          </h4>
+          <ul class="text-gray-700 list-disc list-inside space-y-1">
+            <li>Use privacy-focused browsers or search engines</li>
+            <li>Regularly delete old posts or accounts you no longer use</li>
+            <li>Be cautious about sharing sensitive personal information</li>
+            <li>Understand app permissions before granting access</li>
+            <li>Consider using a VPN for safer internet usage</li>
+          </ul>
+        </div>
       </section>
 
-      <!-- Game (Genially embed) -->
+      <!-- Interactive Game -->
       <section id="game" class="py-10">
         <h3 class="text-2xl font-bold text-purple-700">
-          Interactive Game — "Would You Trade It?"
+          Interactive Game — Would You Trade It?
         </h3>
         <p class="mt-2 text-gray-700 max-w-2xl">
-          Play the Genially interactive experience created by your teammates.
-          The iframe below is responsive for mobile and desktop.
+          Jump in and play the game to experience it yourself! See what choices
+          you would make and discover the fun interactive journey your teammates
+          created.
         </p>
 
         <!-- Responsive iframe wrapper -->
@@ -508,35 +589,137 @@
         </div>
       </section>
 
+      <!-- Awareness Poster -->
       <section id="gallery" class="py-10">
-        <h3 class="text-2xl font-bold text-purple-700">Awareness Poster</h3>
-        <p class="mt-2 text-gray-700"></p>
+        <div class="text-center mb-10">
+          <h3 class="text-3xl font-bold text-purple">Awareness Poster</h3>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <div class="swiper awarenessSwiper w-full max-w-5xl">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide flex justify-center">
+                <div class="poster-frame">
+                  <img src="assets/img/p1.png" alt="" />
+                </div>
+              </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          <img src="assets/img/p1.png" alt="Awareness Poster 1" />
-          <img src="assets/img/p2.png" alt="Awareness Poster 2" />
-          <img src="assets/img/p3.png" alt="Awareness Poster 3" />
+              <!-- Slide 2 -->
+              <div class="swiper-slide flex justify-center">
+                <div class="poster-frame">
+                  <img src="assets/img/p2.png" alt="" />
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide flex justify-center">
+                <div class="poster-frame">
+                  <img src="assets/img/p3.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination mt-4"></div>
+
+            <!-- Navigation arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
         </div>
       </section>
 
-      <!-- Contact -->
-      <section id="contact" class="py-10 bg-black text-white rounded-3xl p-6">
-        <div class="md:flex md:items-center md:justify-between">
-          <div>
-            <h3 class="text-2xl font-bold">Contact & Credits</h3>
-            <p class="mt-2 text-gray-300">
-              SULAM project — Team members: Alya Natasha, [others]. For
-              questions:
-              <a class="underline" href="mailto:youremail@example.com"
-                >youremail@example.com</a
-              >
-            </p>
-          </div>
+      <!-- About Us -->
 
-          <div class="mt-4 md:mt-0">
-            <p class="text-sm text-gray-300">
-              Copyright © {{ new Date().getFullYear() }} SULAM
-            </p>
+      <section id="about-uss" class="py-16 bg-cream text-black font-merri">
+        <h3 class="text-3xl font-extrabold text-center text-purple-700 mb-10">
+          About Us
+        </h3>
+
+        <UCarousel
+          v-slot="{ item }"
+          loop
+          arrows
+          dots
+          :autoplay="{ delay: 3000 }"
+          :items="team"
+          :ui="{ item: 'basis-2/4 md:basis-1/4 lg:basis-1/4' }"
+          class="max-w-7xl mx-auto px-6"
+        >
+          <!-- <div
+        :class="['team-card rounded-lg p-4 flex flex-col items-center', item.gradient]"
+      > -->
+          <div
+            :class="[
+              'px-4 py-4 rounded-3xl flex flex-col items-center gap-y-4',
+              item.gradient,
+            ]"
+          >
+            <img
+              :src="item.img"
+              class="team-img w-40 h-40 rounded-full object-cover mb-4 hover:scale-105 transition-transform duration-300"
+              :alt="item.name"
+            />
+
+            <h4 class="font-bold text-white text-lg">{{ item.name }}</h4>
+            <p class="text-sm text-gray mt-1">{{ item.role }}</p>
+          </div>
+          <!-- <div class="team-info text-center">
+          <h4 class="font-bold text-white text-lg">{{ item.name }}</h4>
+          <p class="text-sm text-gray-100 mt-1">{{ item.role }}</p>
+        </div>
+      </div> -->
+        </UCarousel>
+      </section>
+
+      <!-- Final CTA Section -->
+      <section id="final-cta" class="py-16">
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="cta-card relative rounded-3xl overflow-hidden p-8 md:p-12"
+          >
+            <!-- gradient background -->
+            <div class="absolute inset-0 bg-black"></div>
+
+            <!-- content -->
+            <div class="relative z-10 text-center text-white space-y-6">
+              <h3 class="text-3xl md:text-4xl font-extrabold leading-tight">
+                The more you share, the more AI learns.
+              </h3>
+              <p class="text-lg opacity-95 max-w-2xl mx-auto">
+                Keep your data safe and make conscious choices about what you
+                share online.
+              </p>
+
+              <!-- CTA buttons -->
+              <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <a
+                  href="#pledge"
+                  class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg"
+                >
+                  Make a Pledge
+                </a>
+                <a
+                  href="#game"
+                  class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition"
+                >
+                  Play the Game
+                </a>
+              </div>
+
+              <!-- bottom tagline -->
+              <div class="mt-10 pt-8 border-t border-white/20">
+                <p class="text-sm opacity-80">
+                  Your digital choices matter. Learn more about AI ethics and
+                  data privacy today.
+                </p>
+              </div>
+            </div>
+
+            <!-- subtle border -->
+            <div
+              class="absolute inset-0 rounded-3xl pointer-events-none border border-white/10"
+            ></div>
           </div>
         </div>
       </section>
@@ -545,6 +728,11 @@
 </template>
 
 <script lang="ts" setup>
+import Swiper from "swiper";
+import "swiper/swiper-bundle.css";
+import { Navigation, Pagination } from "swiper/modules";
+import aiImg from "@/assets/img/ai.png";
+
 definePageMeta({
   title: "The Price of Free: How Much Is Your Data Worth?",
   meta: [
@@ -619,6 +807,121 @@ function clearPledge() {
 
 /* computed for displaying recent (limit 5) */
 const latestPledges = computed(() => pledges.value.slice(0, 5));
+import { onMounted } from "vue";
+
+onMounted(() => {
+  new Swiper(".awarenessSwiper", {
+    modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+});
+
+onMounted(() => {
+  new Swiper(".aboutSwiper", {
+    modules: [Navigation, Pagination],
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".about-button-next",
+      prevEl: ".about-button-prev",
+    },
+    breakpoints: {
+      1024: {
+        spaceBetween: 40,
+      },
+    },
+  });
+});
+
+interface TeamMember {
+  name: string;
+  role: string;
+  img: string;
+  gradient: string;
+}
+
+const team: TeamMember[] = [
+  {
+    name: "Siti Najihah",
+    role: "Group Leader",
+    img: aiImg,
+    gradient: "card-gradient-1",
+  },
+  {
+    name: "Shahrizat",
+    role: "Leader - Web Developer",
+    img: "/assets/img/ai.jpg",
+    gradient: "card-gradient-2",
+  },
+  {
+    name: "Alya Natasha",
+    role: "Web Developer",
+    img: "/assets/img/ai.jpg",
+    gradient: "card-gradient-3",
+  },
+  {
+    name: "Sharifah",
+    role: "Web Developer",
+    img: "/assets/img/ai.jpg",
+    gradient: "card-gradient-4",
+  },
+  {
+    name: "Athul",
+    role: "UI/UX Designer",
+    img: "https://media.pitchfork.com/photos/67932557f4bbbe1b47e33b2e/2:1/w_1920,c_limit/Travis-Scott.jpg",
+    gradient: "card-gradient-5",
+  },
+  {
+    name: "Asha Alia",
+    role: "Web Developers",
+    img: "https://media.pitchfork.com/photos/67932557f4bbbe1b47e33b2e/2:1/w_1920,c_limit/Travis-Scott.jpg",
+    gradient: "card-gradient-5",
+  },
+  {
+    name: "Ilman",
+    role: "Leader - Game Developer",
+    img: "https://media.pitchfork.com/photos/67932557f4bbbe1b47e33b2e/2:1/w_1920,c_limit/Travis-Scott.jpg",
+    gradient: "card-gradient-5",
+  },
+  {
+    name: "Syazwani",
+    role: "Game Developer",
+    img: "https://media.pitchfork.com/photos/67932557f4bbbe1b47e33b2e/2:1/w_1920,c_limit/Travis-Scott.jpg",
+    gradient: "card-gradient-5",
+  },
+  {
+    name: "Yazid",
+    role: "Game Developer",
+    img: "https://media.pitchfork.com/photos/67932557f4bbbe1b47e33b2e/2:1/w_1920,c_limit/Travis-Scott.jpg",
+    gradient: "card-gradient-5",
+  },
+  {
+    name: "Dharsini",
+    role: "Game Developer",
+    img: "https://media.pitchfork.com/photos/67932557f4bbbe1b47e33b2e/2:1/w_1920,c_limit/Travis-Scott.jpg",
+    gradient: "card-gradient-5",
+  },
+  {
+    name: "Fahmi",
+    role: "Game Developer",
+    img: "https://media.pitchfork.com/photos/67932557f4bbbe1b47e33b2e/2:1/w_1920,c_limit/Travis-Scott.jpg",
+    gradient: "card-gradient-5",
+  },
+];
 </script>
 
 <style scoped>
@@ -631,6 +934,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body,
+html {
+  overflow-x: hidden;
+}
+
 /* ensure iframe border looks subtle on dark mode etc. */
 iframe {
   border: 1px solid rgba(15, 23, 42, 0.06);
@@ -641,16 +949,247 @@ iframe {
 }
 .stat-badge {
   min-width: 88px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: #fff;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   text-align: right;
 }
+
+/* Fairness & Bias styles */
+.bias-tile {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(8, 12, 30, 0.35);
+  color: #fff;
+}
+
+/* Fix swiper height */
+.awarenessSwiper {
+  width: 100%;
+  max-width: 500px; /* makes poster smaller */
+  height: auto;
+}
+
+/* Make slides centered */
+.awarenessSwiper .swiper-slide {
+  display: flex;
+  width: 250px;
+  justify-content: center;
+}
+
+/* Limit poster height */
+.awarenessSwiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Make arrows clickable and visible */
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 50 !important;
+  color: #7c3aed;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.about-card {
+  width: 260px;
+  border-radius: 22px;
+  padding: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba(168, 85, 247, 0.7),
+    rgba(34, 211, 238, 0.7),
+    rgba(236, 72, 153, 0.7)
+  );
+  box-shadow: 0px 0px 30px rgba(168, 85, 247, 0.4);
+  backdrop-filter: blur(20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 45px rgba(244, 114, 182, 0.6);
+}
+
+.about-img {
+  border-radius: 16px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.about-info {
+  text-align: left;
+}
+
+/* Team Cards with vibrant gradients */
+.team-card {
+  width: 280px;
+  height: auto;
+  border-radius: 24px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.team-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.card-gradient-1 {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+}
+
+.card-gradient-2 {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+.card-gradient-3 {
+  background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+}
+
+.card-gradient-4 {
+  background: linear-gradient(135deg, #f43f5e 0%, #f97316 100%);
+}
+
+.card-gradient-5 {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+}
+
+.team-img {
+  border-radius: 20px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.team-info {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    width: 240px;
+  }
+  .team-img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #fairness-bias .bias-tile {
+    padding: 1rem;
+  }
+  #fairness-bias .grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* small readable list spacing */
+#fairness-bias ul {
+  line-height: 1.4;
+}
+
 @media (min-width: 768px) {
   /* slightly lift hero spacing on medium+ screens */
-  .stat-badge { min-width: 110px; }
+  .stat-badge {
+    min-width: 110px;
+  }
+}
+
+/* About Us Swiper */
+.aboutSwiper {
+  overflow-x: auto;
+}
+
+.aboutSwiper .swiper-slide {
+  width: 280px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.aboutSwiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* About navigation buttons */
+.about-button-next,
+.about-button-prev {
+  z-index: 50 !important;
+  color: #7c3aed;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50% !important;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-button-next:hover,
+.about-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.5);
+}
+
+.about-button-next::after,
+.about-button-prev::after {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Final CTA Section */
+.cta-card {
+  position: relative;
+  box-shadow: 0 20px 60px rgba(33, 30, 32, 0.25);
+}
+
+@media (max-width: 768px) {
+  .cta-card {
+    padding: 2rem 1.5rem;
+  }
+  #final-cta h3 {
+    font-size: 1.75rem;
+  }
 }
 </style>
