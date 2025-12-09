@@ -9,6 +9,7 @@
       <SectionPrivacy />
       <SectionGame />
       <SectionPledge />
+      <SectionSlido />
       <SectionPoster />
       <SectionAbout />
       <SectionCTA />
