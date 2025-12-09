@@ -17,15 +17,19 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  title: "The Price of Free: How Much Is Your Data Worth?",
+useHead({
+  title: "Sulam - Understand AI Ethics & Data Privacy",
   meta: [
     {
       name: "description",
       content:
-        "Learn how everyday data trains AI — an interactive learning experience with a game and pledge.",
+        "Explore the impact of AI and data privacy with Sulam. Learn about AI ethics, fairness, and how your digital choices shape the algorithms around you.",
     },
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    {
+      name: "keywords",
+      content:
+        "AI ethics, data privacy, artificial intelligence, fairness, bias, online safety, digital choices, AI impact, Sulam",
+    },
   ],
 });
 </script>

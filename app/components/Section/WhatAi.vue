@@ -9,7 +9,7 @@
         Artificial Intelligence (AI) are systems that perform tasks that
         normally require human intelligence such as recognising images,
         translating language, or recommending content. Many AI systems are
-        trained using data created by people: photos, clicks, text and location.
+        <span class="font-extrabold bg-yellow-200">trained using data created by people</span>: photos, clicks, text and location.
       </p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

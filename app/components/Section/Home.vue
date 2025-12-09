@@ -13,13 +13,13 @@
         </h2>
 
         <p class="mt-5 text-gray-700 text-lg italic">
-          In the age of Artificial Intelligence, your data is your identity.
+          In the age of Artificial Intelligence, your <span class="font-extrabold">data is your identity</span>.
         </p>
 
         <p class="mt-6 text-gray-700 max-w-xl">
-          Every online action teaches AI something about you. This website
-          uncovers how data powers AI systems and how your digital choices shape
-          the algorithms around you.
+          Every online action <span class="font-extrabold bg-yellow-200">teaches AI something about you.</span> This website
+          uncovers how <span class="font-extrabold bg-yellow-200">data powers AI systems</span> and how your <span class="font-extrabold bg-yellow-200">digital choices shape
+          the algorithms</span> around you.
         </p>
 
         <p class="mt-6 text-gray-700 max-w-xl">
