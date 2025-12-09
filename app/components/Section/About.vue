@@ -47,6 +47,7 @@ import ilman from "@/assets/img/P1010165.jpg";
 import shaa from "@/assets/img/shaa.jpg";
 import wani from "@/assets/img/wani.jpg";
 import yazid from "@/assets/img/Yazid.jpg";
+import alya from "@/assets/img/alya.jpg"
 
 interface TeamMember {
   name: string;
@@ -71,7 +72,7 @@ const team: TeamMember[] = [
   {
     name: "Alya Natasha",
     role: "Web Developer",
-    img: athul,
+    img: alya,
     gradient: "card-gradient-3",
   },
   {
