@@ -551,14 +551,16 @@
           <div class="mt-4 flex gap-3">
             <button
               type="submit"
-              class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition"
+              :disabled="isSubmitting"
+              class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Pledge
+              {{ isSubmitting ? "Submitting..." : "Submit Pledge" }}
             </button>
             <button
               type="button"
               @click="clearPledge"
-              class="border px-4 py-2 rounded-lg"
+              :disabled="isSubmitting"
+              class="border px-4 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Clear
             </button>
@@ -752,51 +754,72 @@ function closeMobile() {
   mobileOpen.value = false;
 }
 
-/* Pledge form (local-only demo). If you want server saving, replace submitPledge with API/Firebase call. */
+/* Pledge form with server-side persistence */
 const pledge = reactive<{ name: string; text: string; share: boolean }>({
   name: "",
   text: "",
   share: true,
 });
 const pledgeStatus = ref("");
-const pledges = ref<Array<{ name?: string; text: string; when: string }>>([]);
+const pledges = ref<Array<{ id: string; name?: string | null; text: string; createdAt: string }>>([]);
+const isSubmitting = ref(false);
 
-/* Save pledges to localStorage so they persist across reloads */
-const loadPledges = () => {
+/* Load pledges from server */
+const loadPledges = async () => {
   try {
-    const raw = localStorage.getItem("sulam_pledges");
-    if (raw) pledges.value = JSON.parse(raw);
+    const response = await $fetch("/api/pledges");
+    if (response.success && response.data) {
+      pledges.value = response.data;
+    }
   } catch (e) {
-    /* ignore */
+    console.error("Error loading pledges:", e);
   }
 };
-const savePledges = () => {
-  try {
-    localStorage.setItem("sulam_pledges", JSON.stringify(pledges.value));
-  } catch (e) {
-    /* ignore */
-  }
-};
-loadPledges();
 
-function submitPledge() {
+// Load pledges on component mount
+onMounted(() => {
+  loadPledges();
+});
+
+async function submitPledge() {
   if (!pledge.text.trim()) {
     pledgeStatus.value = "Please write a short pledge before submitting.";
     setTimeout(() => (pledgeStatus.value = ""), 3000);
     return;
   }
-  const record = {
-    name: pledge.name ? pledge.name.trim() : undefined,
-    text: pledge.text.trim(),
-    when: new Date().toLocaleString(),
-  };
-  if (pledge.share) pledges.value.unshift(record);
-  pledgeStatus.value = "Thanks — your pledge is saved locally!";
-  savePledges();
-  // clear form
-  pledge.name = "";
-  pledge.text = "";
-  setTimeout(() => (pledgeStatus.value = ""), 3500);
+
+  if (isSubmitting.value) return;
+  
+  isSubmitting.value = true;
+  pledgeStatus.value = "";
+
+  try {
+    const response = await $fetch("/api/pledges/", {
+      method: "POST",
+      body: {
+        name: pledge.name ? pledge.name.trim() : null,
+        text: pledge.text.trim(),
+      },
+    });
+
+    if (response.success) {
+      pledgeStatus.value = "Thanks — your pledge has been saved!";
+      // Reload pledges to show the new one
+      if (pledge.share) {
+        await loadPledges();
+      }
+      // Clear form
+      pledge.name = "";
+      pledge.text = "";
+      setTimeout(() => (pledgeStatus.value = ""), 3500);
+    }
+  } catch (error: any) {
+    console.error("Error submitting pledge:", error);
+    pledgeStatus.value = error.data?.statusMessage || "Failed to save pledge. Please try again.";
+    setTimeout(() => (pledgeStatus.value = ""), 3500);
+  } finally {
+    isSubmitting.value = false;
+  }
 }
 
 function clearPledge() {
@@ -806,7 +829,11 @@ function clearPledge() {
 }
 
 /* computed for displaying recent (limit 5) */
-const latestPledges = computed(() => pledges.value.slice(0, 5));
+const latestPledges = computed(() => pledges.value.slice(0, 5).map(p => ({
+  name: p.name || undefined,
+  text: p.text,
+  when: new Date(p.createdAt).toLocaleString(),
+})));
 import { onMounted } from "vue";
 
 onMounted(() => {
