@@ -27,6 +27,12 @@ export default defineEventHandler(async (event) => {
     };
   } catch (error: any) {
     console.error("Error creating pledge:", error);
+    console.error("Error details:", {
+      message: error.message,
+      code: error.code,
+      meta: error.meta,
+      stack: error.stack,
+    });
     
     if (error.statusCode) {
       throw error;
@@ -34,7 +40,11 @@ export default defineEventHandler(async (event) => {
 
     throw createError({
       statusCode: 500,
-      statusMessage: "Failed to create pledge",
+      statusMessage: error.message || "Failed to create pledge",
+      data: {
+        code: error.code,
+        details: error.meta,
+      },
     });
   }
 });
