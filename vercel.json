@@ -1,7 +1,13 @@
 {
-  "buildCommand": "prisma generate && npm run build",
+  "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "npm install && npx prisma generate",
   "framework": "nuxtjs",
-  "outputDirectory": ".output/public"
+  "outputDirectory": ".output/public",
+  "functions": {
+    "api/**": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  }
 }
