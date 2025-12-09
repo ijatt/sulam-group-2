@@ -17,9 +17,6 @@
 </template>
 
 <script lang="ts" setup>
-import { link } from '#build/ui';
-import { onMounted } from 'vue';
-
 useHead({
   title: "The Price of Free: How Much is Your Data Worth?",
   meta: [
@@ -41,7 +38,6 @@ useHead({
   ]
 });
 
-// Add scroll animations
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -54,7 +50,6 @@ onMounted(() => {
     rootMargin: '0px 0px -100px 0px'
   });
 
-  // Observe all sections and major elements
   document.querySelectorAll('section, .card-gradient-1, .card-gradient-2, .card-gradient-3, .card-gradient-4, .card-gradient-5').forEach((el) => {
     el.classList.add('scroll-animate');
     observer.observe(el);
