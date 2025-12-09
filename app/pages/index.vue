@@ -18,6 +18,7 @@
 
 <script lang="ts" setup>
 import { link } from '#build/ui';
+import { onMounted } from 'vue';
 
 useHead({
   title: "The Price of Free: How Much is Your Data Worth?",
@@ -39,12 +40,108 @@ useHead({
     }
   ]
 });
+
+// Add scroll animations
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+  // Observe all sections and major elements
+  document.querySelectorAll('section, .card-gradient-1, .card-gradient-2, .card-gradient-3, .card-gradient-4, .card-gradient-5').forEach((el) => {
+    el.classList.add('scroll-animate');
+    observer.observe(el);
+  });
+});
 </script>
 
 <style scoped>
 .bg-cream {
   background-color: #faf7f2;
 }
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger animation for multiple elements */
+.scroll-animate:nth-child(1) { animation-delay: 0s; }
+.scroll-animate:nth-child(2) { animation-delay: 0.1s; }
+.scroll-animate:nth-child(3) { animation-delay: 0.2s; }
+.scroll-animate:nth-child(4) { animation-delay: 0.3s; }
+.scroll-animate:nth-child(5) { animation-delay: 0.4s; }
 
 /* small polish for anchors smooth scrolling */
 html {
@@ -98,6 +195,7 @@ html {
 .about-info {
   text-align: left;
 }
+
 
 /* Team Cards with vibrant gradients */
 .team-card {
